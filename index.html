@@ -1,34 +1,96 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Kiosk - Acces nelimitat</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9fafb;
+    }
+    .text-dark {
+      color: #2B515E;
+    }
+    .text-green {
+      color: #30BF8B;
+    }
+    .btn-green {
+      background-color: #2ABB87;
+    }
+    .btn-green:hover {
+      background-color: #24a178;
+    }
+    .btn-text {
+      color: #1E1E1E;
+    }
+    .focus-ring:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #2ABB87;
+    }
+    /* Gradient overlay to blend image and content */
+    .image-blend {
+      position: relative;
+    }
+    .image-blend::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    }
+    /* Title font size lock for desktop */
+    @media (min-width: 640px) {
+      .title-text {
+        font-size: 37.4px;
+        line-height: 1;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen p-4">
+
+<body class="flex items-center justify-center min-h-screen p-4 text-gray-800">
 
   <div class="bg-white shadow-lg rounded-2xl max-w-md w-full overflow-hidden">
-    <!-- Top Image -->
-    <img src="YOUR_IMAGE_URL_HERE" alt="Magazines" class="w-full object-cover h-48 sm:h-64">
 
-    <div class="p-6">
+    <!-- Image with gradient -->
+    <div class="image-blend">
+      <img src="https://raw.githubusercontent.com/sheidapp/KioskOrange/refs/heads/main/IMG.jpg"
+           alt="Magazines" class="w-full object-cover h-52 sm:h-64">
+    </div>
+
+    <div class="p-6 pt-4">
+
+      <!-- Logo space -->
+      <div class="mb-3">
+        <img src="https://raw.githubusercontent.com/sheidapp/KioskOrange/refs/heads/main/logo.png" alt="The Kiosk Logo" width="73" height="17" class="object-contain">
+      </div>
+
       <!-- Title -->
-      <h1 class="text-2xl sm:text-3xl font-bold text-center">
-        Acces nelimitat la <br>
-        <span class="text-green-600">cele mai bune reviste din lume</span>
+      <h1 class="title-text font-bold text-left">
+        <span class="text-dark">Acces nelimitat la<br>cele mai bune</span><br>
+        <span class="text-green">reviste din lume</span>
       </h1>
 
-      <!-- Input -->
-      <p class="mt-6 text-center text-gray-700">
+      <!-- Input Section -->
+      <p class="mt-6 text-left text-gray-700 text-sm sm:text-base">
         Introduceți numărul dvs. de telefon și confirmați codul PIN:
       </p>
 
-      <div class="mt-4 flex flex-col items-center">
+      <div class="mt-4 flex flex-col">
         <input type="tel" placeholder="+40 7 XXXXXXXX"
-               class="w-full border border-gray-300 rounded-full px-4 py-3 text-center focus:outline-none focus:ring-2 focus:ring-green-500">
+               class="w-full border border-gray-300 rounded-full px-4 py-3 text-center focus-ring text-gray-800 text-base">
 
-        <button class="mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full px-6 py-3 w-full transition">
+        <button class="mt-4 btn-green font-semibold rounded-full px-6 py-3 w-full transition-all btn-text">
           Continuați
         </button>
       </div>
@@ -45,17 +107,20 @@
         thekiosk.ro@silverlines.info sau prin telefon: +40 318262751
       </p>
 
-      <!-- Footer links -->
+      <!-- Footer Links -->
       <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-        <a href="#" class="hover:text-green-600">Acasă</a>
-        <a href="#" class="hover:text-green-600">Dezabonare</a>
-        <a href="#" class="hover:text-green-600">Termeni și condiții</a>
-        <a href="#" class="hover:text-green-600">Politica de confidențialitate</a>
+        <a href="#" class="hover:text-[#30BF8B]">Acasă</a>
+        <a href="#" class="hover:text-[#30BF8B]">Dezabonare</a>
+        <a href="#" class="hover:text-[#30BF8B]">Termeni și condiții</a>
+        <a href="#" class="hover:text-[#30BF8B]">Politica de confidențialitate</a>
       </div>
 
-      <p class="text-center text-xs text-gray-400 mt-4">© 2025 The Kiosk. Toate drepturile rezervate.</p>
+      <p class="text-center text-xs text-gray-400 mt-4">
+        © 2025 The Kiosk. Toate drepturile rezervate.
+      </p>
     </div>
   </div>
 
 </body>
 </html>
+
